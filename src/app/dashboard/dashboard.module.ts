@@ -5,9 +5,10 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
+import { InvoicesModule } from './invoices/invoices.module';
 
 @NgModule({
   declarations: [DashboardComponent],
-  imports: [CommonModule, ProductsModule, OrdersModule, DashboardRoutingModule]
+  imports: [CommonModule, ProductsModule, OrdersModule, InvoicesModule, DashboardRoutingModule]
 })
 export class DashboardModule {}
