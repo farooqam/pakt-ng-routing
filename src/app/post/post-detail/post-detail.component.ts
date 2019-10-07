@@ -15,9 +15,7 @@ export class PostDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.postService.getPost(params['id']).subscribe(post => this.post = post);
-    });
+    this.post = this.route.snapshot.data['resolvedPost'];
   }
 
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostResolver } from './post-resolver';
 
 const routes: Routes = [
   {
@@ -10,7 +11,10 @@ const routes: Routes = [
   },
   {
     path: 'posts/:id',
-    component: PostDetailComponent
+    component: PostDetailComponent,
+    resolve: {
+      resolvedPost: PostResolver
+    }
   }
 ];
 
