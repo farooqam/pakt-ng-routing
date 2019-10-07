@@ -1,0 +1,44 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Sku</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Microphone</td>
+        <td>Otto</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['1', 'edit']">Edit</a>
+          |
+          <a class="btn btn-primary" [routerLink]="['1']">Details</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Laptop</td>
+        <td>Thornton</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['2', 'edit']">Edit</a>
+          |
+          <a class="btn btn-primary" [routerLink]="['2']">Details</a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Iphone</td>
+        <td>the Bird</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['3', 'edit']">Edit</a>
+          |
+          <a class="btn btn-primary" [routerLink]="['3']">Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
