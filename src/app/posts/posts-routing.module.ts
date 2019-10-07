@@ -6,10 +6,12 @@ import { PostResolver } from './post-resolver.service';
 import { PostEditInfoComponent } from './post-edit/post-edit-info.component';
 import { PostEditTagsComponent } from './post-edit/post-edit-tags.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { AuthGuard } from '../user/auth.guard';
 
 const routes: Routes = [
   {
     path: 'posts',
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

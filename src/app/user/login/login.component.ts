@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService) {}
   title = 'Login';
   ngOnInit() {}
 
@@ -17,5 +18,6 @@ export class LoginComponent implements OnInit {
     const password = loginForm.form.value.password;
     console.log(email, password);
     this.userService.login(email, password);
+    this.router.navigateByUrl('/posts');
   }
 }

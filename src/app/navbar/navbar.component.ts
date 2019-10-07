@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../user/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
   showDashboard = true;
 
   ngOnInit() {}
@@ -20,5 +21,14 @@ export class NavbarComponent implements OnInit {
   hideDashboard() {
     this.router.navigate([{ outlets: { dashboardoutlet: null } }]);
     this.showDashboard = true;
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
   }
 }
