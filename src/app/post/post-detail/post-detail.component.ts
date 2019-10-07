@@ -11,11 +11,14 @@ import { Post } from '../post';
 })
 export class PostDetailComponent implements OnInit {
   post: Post;
+  errorMessage: string;
 
   constructor(private route: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit() {
-    this.post = this.route.snapshot.data['resolvedPost'];
+    const postResolved = this.route.snapshot.data['resolved'];
+    this.post = postResolved.post;
+    this.errorMessage = postResolved.error;
   }
 
 }

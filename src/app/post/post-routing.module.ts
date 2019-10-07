@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'posts/:id',
     component: PostDetailComponent,
     resolve: {
-      resolvedPost: PostResolver
+      resolved: PostResolver
     }
   }
 ];
