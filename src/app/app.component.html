@@ -1,2 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-md-9">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-3">
+        <router-outlet name="Dashboard"></router-outlet>
+    </div>
+</div>

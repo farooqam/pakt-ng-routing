@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,12 +6,10 @@ import * as $ from 'jquery';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+
+  constructor() { }
 
   ngOnInit() {
-    $('#menu-toggle').click(function(e) {
-      e.preventDefault();
-      $('#wrapper').toggleClass('toggled');
-    });
   }
+
 }
