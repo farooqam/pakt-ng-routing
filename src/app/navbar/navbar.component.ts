@@ -7,24 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  constructor(private router: Router) {}
+  showDashboard = true;
 
-  showDashboard: boolean;
+  ngOnInit() {}
 
-  constructor(private router: Router) { 
+  displayDashboard() {
+    this.router.navigate([{ outlets: { dashboardoutlet: ['dashboard'] } }]);
     this.showDashboard = false;
   }
 
-  ngOnInit() {
+  hideDashboard() {
+    this.router.navigate([{ outlets: { dashboardoutlet: null } }]);
+    this.showDashboard = true;
   }
-
-  toggleDashboard() {
-    this.showDashboard = !this.showDashboard;
-
-    if (this.showDashboard) {
-      this.router.navigate([{outlets: {Dashboard: 'dashboard'}}]);
-    } else {
-      this.router.navigate([{outlets: {Dashboard: null}}]);
-    }
-  }
-
 }

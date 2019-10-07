@@ -1,37 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PostModule } from './post/post.module';
+import { AppRoutingModule } from './app-routing.module';
+import { PostsModule } from './posts/posts.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodosModule } from './todos/todos.module';
+import { HttpClientModule } from '@angular/common/http';
+import { UserModule } from './user/user.module';
 
-const appRoutes: Routes = [
-  {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
-    path: '',
-    redirectTo: '/posts',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent
-  }
-];
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     AboutComponent,
+    NavbarComponent,
     PageNotFoundComponent
   ],
-  imports: [BrowserModule, PostModule, DashboardModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    PostsModule,
+    TodosModule,
+    DashboardModule,
+    UserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

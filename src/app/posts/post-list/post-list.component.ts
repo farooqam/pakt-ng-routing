@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post';
 import { PostService } from '../post.service';
+import { Post } from '../post';
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -12,6 +13,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.fetchPosts();
   }
+
   fetchPosts() {
     this.postService.getPosts().subscribe(posts => {
       this.posts = posts;

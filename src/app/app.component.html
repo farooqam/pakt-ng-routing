@@ -1,9 +1,13 @@
 <app-navbar></app-navbar>
-<div class="row">
+<div [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <div *ngIf="loading">...Loading</div>
+  <div class="row">
     <div class="col-md-9">
-        <router-outlet></router-outlet>
+      <router-outlet #o="outlet"></router-outlet>
     </div>
+
     <div class="col-md-3">
-        <router-outlet name="Dashboard"></router-outlet>
+      <router-outlet name="dashboardoutlet"></router-outlet>
     </div>
+  </div>
 </div>

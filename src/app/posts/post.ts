@@ -4,3 +4,8 @@ export class Post {
   content: string;
   description: string;
 }
+
+export interface PostResolved {
+  post: Post;
+  error?: any;
+}
